@@ -1,0 +1,241 @@
+@keyframes fade-inX {
+  from {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+:root {
+  --primary-color: #ede4c7;
+  --secondary-color: #8c461d;
+  --dark-text-color: #264159;
+  --background-color: #ffffee;
+  --barre-scrollbar: #2f91b4;
+  --fond-scrollbar: #FFFFFF;
+  --dark-shadow-color:rgba(146, 146, 146, 0.5);
+  --marginBlock: 60px;
+}
+
+*,*::before,*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: var(--dark-text-color);
+  margin-inline: 1rem;
+}
+
+details[open] > summary ~ * {
+  animation: fade-inX 0.3s ease-in-out;
+}
+details summary{
+  cursor: pointer;
+}
+
+/*HEADER*/
+header {
+  background-color: var(--primary-color);
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-inline: 2%;
+  gap: 3px;
+  color: var(--dark-text-color);
+  width: 100%;
+  box-shadow: 0px 3px 10px var(--dark-shadow-color);
+}
+
+
+#passCulture{
+  width: max(10vw, 60px);
+  margin-bottom: 5%;
+}
+#fresken{
+  max-height: max(10vw, 70px);
+  object-fit: contain;
+  border: 1px solid saddlebrown;
+  padding-block: 10px;
+  padding-inline: 10%;
+  margin-block: 6px;
+}
+#contact{
+  font-size: 10px;
+  margin-block: auto;
+}
+#contact p{
+  margin-inline: 0;
+  font-size: clamp(0.7rem, 2vw, 1.2rem);
+}
+/*FIN HEADER*/
+
+#presentation{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-block: 40px;
+}
+#presentation img{
+  width: 500px;
+  object-fit: cover;
+  overflow: hidden;
+}
+#presentation p{
+  max-width: 600px;
+}
+
+.menuDeroulant{
+  --_spaceLeft: 2rem;
+  background-color: var(--primary-color);
+  width: 90%;
+  margin-inline: auto;
+  margin-block: 20px;
+  padding-block: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.1);
+
+}
+.menuDeroulant summary {
+  font-size: 20px;
+  color: var(--secondary-color);
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-left: var(--_spaceLeft);
+}
+.menuDeroulant p{
+  color: var(--dark-text-color);
+  margin-block: 20px;
+  padding-left: var(--_spaceLeft);
+}
+
+.lienDlsDroite{
+  display: flex;
+  justify-content: flex-end;
+}
+.lienTelechargement{
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  place-items: center;
+  margin-right: 6%;
+}
+.pdfLogo{
+  height: clamp(2rem, 2vw, 4rem);
+}
+
+
+.winners{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+.winners p{
+ padding-left: 0;
+}
+.photoWinners{
+  height: 80px;
+  display: flex;
+  margin-left: 5%;
+}
+
+.valeurs{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.media-scroller{
+  margin-inline: 5%;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  margin-block: 5vw;
+}
+
+.media-scroller img{
+  inline-size: 100%;
+  height: 500px;
+  width: auto;
+  max-height: 800px;
+}
+
+footer{
+  background: var(--primary-color);
+}
+footer p{
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  padding-block: 5px;
+}
+
+/* début scrollbar */
+::-webkit-scrollbar {
+  height: 0.5rem;
+  /* height of horizontal scrollbar */
+  width: 0.5rem;
+  /* width of vertical scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--fond-scrollbar);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--barre-scrollbar);
+}
+
+/* Scrollbar corner */
+::-webkit-scrollbar-corner {
+  background: var(--fond-scrollbar);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--barre-scrollbar) var(--fond-scrollbar);
+}
+
+/* Browsers without `::-webkit-scrollbar-*` support */
+@supports (not selector(::-webkit-scrollbar)) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--barre-scrollbar) var(--fond-scrollbar);
+  }
+}
+/* fin scrollbar */
+
+#travaillerAvecNous{
+  display: flex;
+}
+#travaillerAvecNous img{
+  width: 10%;
+  min-width: 100px;
+  object-fit: contain;
+  padding-right: 20px;
+  transform: translateY(-20px);
+}
+
